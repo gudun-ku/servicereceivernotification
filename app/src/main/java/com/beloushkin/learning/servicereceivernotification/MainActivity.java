@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     //  + поймать системное событие
     //  +  поймать свое событие
     //
-    //    поймать событие из сервиса
+    //  +  поймать событие из сервиса
     //
     //    создать уведомление, сделать сервис foreground
     //
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private SimpleReceiver mSimpleReceiver;
     private String actionAirplaneModeChanged =  Intent.ACTION_AIRPLANE_MODE_CHANGED;
     private IntentFilter mIntentFilter;
+    private TextView tvTime;
 
 
     @Override
@@ -65,7 +67,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        mSimpleReceiver= new SimpleReceiver();
+        tvTime = findViewById(R.id.tv_time);
+        mSimpleReceiver= new SimpleReceiver(tvTime);
         mIntentFilter = new IntentFilter(SimpleReceiver.SIMPLE_ACTION);
 
     }
