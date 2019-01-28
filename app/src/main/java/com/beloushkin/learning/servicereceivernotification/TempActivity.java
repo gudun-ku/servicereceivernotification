@@ -13,10 +13,11 @@ public class TempActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_temp);
 
-        long time = getIntent().getLongExtra(CountService.TIME, 0);
+        //long time = getIntent().getLongExtra(CountService.TIME, 0);
+        String stringExtra = getIntent().getStringExtra(CountService.TIME);
 
         tvTime = findViewById(R.id.tv_time);
-        tvTime.setText("Time is " + time);
+        tvTime.setText("This is from notification " + stringExtra);
 
 
     }
