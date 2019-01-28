@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ServiceReceiverNotification</string>
+    <string name="cs_channel_id">count_service_channel_id</string>
 </resources>
